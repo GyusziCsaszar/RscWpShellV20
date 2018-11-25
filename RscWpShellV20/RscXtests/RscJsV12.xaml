@@ -1,0 +1,72 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RscXtests.RscJsV12"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		
+		<!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Ressive.Hu" Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock x:Name="PageTitle" Text="Web Ctrl v1.2" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" />
+        </StackPanel>
+
+		<!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+			
+            <TextBlock Text="fully qualified URI" Grid.Row="0" />
+            <Grid x:Name="GoPanel" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txUri" Grid.Column="0" Width="Auto"></TextBox>
+                <Button x:Name="btnGo" Grid.Column="1" Content="GO!" Width="Auto" Click="btnGo_Click"></Button>
+                <Button x:Name="btnJs" Grid.Column="2" Content="js" Width="Auto" Click="btnJs_Click"></Button>
+            </Grid>
+			
+            <TextBlock Text="phone:WebBrowser Control" Grid.Row="2" />
+			<phone:WebBrowser x:Name="wbc" Grid.Row="3" />
+			
+            <TextBlock Text="log" Grid.Row="4" />
+			<TextBox x:Name="txLog" Grid.Row="5" Text="You can use device's Back button!!!"
+				IsReadOnly="False" TextWrapping="Wrap"
+				TextAlignment="Left" FontSize="{StaticResource PhoneFontSizeSmall}"
+				Background="{StaticResource PhoneBackgroundBrush}"
+				Foreground="{StaticResource PhoneAccentBrush}"
+				AcceptsReturn="True" BorderThickness="0" />
+				
+			<Button x:Name="btnInject" Grid.Row="6" Content="Inject original HTML code!" Width="Auto" Click="btnInject_Click"></Button>
+							
+        </Grid>
+		
+	</Grid>
+
+</phone:PhoneApplicationPage>
