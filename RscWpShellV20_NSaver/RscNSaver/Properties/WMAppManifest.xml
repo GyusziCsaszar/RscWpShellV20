@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-US"/>
+  <App xmlns="" ProductID="{fb2f413e-8097-402b-bb3b-b44a97147ec2}" Title="#Launcher 80 (N Saver)" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="RscNSaver author" Description="Sample description" Publisher="RscNSaver" PublisherID="{b605d047-9361-4644-bb9c-9a87fc5fb5c5}">
+    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <!-- Default -->
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <!-- MediaLibrary Pictures -->
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO_FULL" />
+      <!-- Photo Camera -->
+      <Capability Name="ID_CAP_CAMERA" />
+      <!-- Video Camera -->
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <!-- BlueTooth -->
+      <!-- <Capability Name="ID_CAP_PROXIMITY"/> -->
+      <!-- RscStore_ExternalStorage -->
+      <!-- <Capability Name="ID_CAP_REMOVABLE_STORAGE"/> -->
+      <!-- Win10Mo DENIES!!! -->
+      <!-- RscIeV10 - Change User Agent -->
+      <!-- <Capability Name="ID_CAP_INTEROPSERVICES"/> -->
+    </Capabilities>
+    <Tasks>
+      <DefaultTask  Name ="_default" NavigationPage="ClockSaver.xaml"/>
+      <ExtendedTask Name="BackgroundTask">
+        <BackgroundServiceAgent Specifier="AudioPlayerAgent" Name="AudioPlaybackAgent" Source="AudioPlaybackAgent" Type="AudioPlaybackAgent.AudioPlayer" />
+      </ExtendedTask>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="RscNSaverToken" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <Count>0</Count>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
+          <Title>#Launcher 80 (N Saver)</Title>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI></BackBackgroundImageURI>
+          <BackTitle></BackTitle>
+          <DeviceLockImageURI></DeviceLockImageURI>
+          <HasLarge></HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA"/>
+      <ScreenResolution Name="ID_RESOLUTION_WXGA"/>
+      <ScreenResolution Name="ID_RESOLUTION_HD720P"/>
+    </ScreenResolutions>
+  </App>
+</Deployment>
