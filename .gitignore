@@ -50,3 +50,9 @@ RscWpShellV20_Camera/RscCamera/Bin/
 RscWpShellV20_Camera/RscCamera/obj/
 RscWpShellV20_Explorer/RscExplorer/Bin/
 RscWpShellV20_Explorer/RscExplorer/obj/
+RscWpShellV20_GoogleApi/Lib_RscGoogleApi/Bin/
+RscWpShellV20_GoogleApi/Lib_RscGoogleApi/obj/
+RscWpShellV20_GoogleApi/Lib_RscHttps/Bin/
+RscWpShellV20_GoogleApi/Lib_RscHttps/obj/
+RscWpShellV20_GoogleApi/RscGoogleApi/Bin/
+RscWpShellV20_GoogleApi/RscGoogleApi/obj/
