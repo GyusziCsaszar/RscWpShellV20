@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{17397cf0-42d5-4fc4-9748-815da82d6700}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RscGoogleApiMail</RootNamespace>
+    <AssemblyName>RscGoogleApiMail</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>RscGoogleApiMail_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>RscGoogleApiMail.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TreeLbItem.cs" />
+    <Compile Include="TreeLbItemThread.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="$(SolutionDir)\Assets\ApplicationIcon.png">
+      <Link>Assets\ApplicationIcon.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(SolutionDir)\Assets\Tiles\FlipCycleTileLarge.png">
+      <Link>Assets\Tiles\FlipCycleTileLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(SolutionDir)\Assets\Tiles\FlipCycleTileMedium.png">
+      <Link>Assets\Tiles\FlipCycleTileMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(SolutionDir)\Assets\Tiles\FlipCycleTileSmall.png">
+      <Link>Assets\Tiles\FlipCycleTileSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(SolutionDir)\Assets\Tiles\IconicTileMediumLarge.png">
+      <Link>Assets\Tiles\IconicTileMediumLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(SolutionDir)\Assets\Tiles\IconicTileSmall.png">
+      <Link>Assets\Tiles\IconicTileSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RscWpShellV20\RscLearnXamlV10\RscLearnXamlV10.csproj">
+      <Project>{4AA8F47A-240F-4099-B295-E8D00CFA0209}</Project>
+      <Name>RscLearnXamlV10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\AudioPlaybackAgent\AudioPlaybackAgent.csproj">
+      <Project>{39FEDD8F-3200-410F-A21A-77C286F273E6}</Project>
+      <Name>AudioPlaybackAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_RscIPgC_Dlgs\Lib_RscIPgC_Dlgs.csproj">
+      <Project>{35592DA3-E2F5-480F-82ED-496B2EF4F1F4}</Project>
+      <Name>Lib_RscIPgC_Dlgs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_RscSettings\Lib_RscSettings.csproj">
+      <Project>{EABB651F-0F58-4FCE-ACCB-F51D65DE497D}</Project>
+      <Name>Lib_RscSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_RscViewers\Lib_RscViewers.csproj">
+      <Project>{2D88B41F-AB20-4376-89C1-83CC6E8CF15A}</Project>
+      <Name>Lib_RscViewers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\RscFtpClients\RscFtpClients.csproj">
+      <Project>{8563AEB7-2019-42E8-82D0-3D79F5CD1E65}</Project>
+      <Name>RscFtpClients</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\RscIeV10\RscIeV10.csproj">
+      <Project>{679E82E2-9588-44C5-9252-565E0D1B0CC5}</Project>
+      <Name>RscIeV10</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Launcher_AppMini\Launcher_AppMini.csproj">
+      <Project>{E603A3EB-391E-46C4-A880-123FD73C346E}</Project>
+      <Name>Launcher_AppMini</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_Rsc\Lib_Rsc.csproj">
+      <Project>{3CC7F203-4366-422C-A706-E37A527AEC36}</Project>
+      <Name>Lib_Rsc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_RscStore\Lib_RscStore.csproj">
+      <Project>{A2AD908A-8142-480B-809F-9151A176EE5F}</Project>
+      <Name>Lib_RscStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_RscFormats\Lib_RscFormats.csproj">
+      <Project>{D5D7DA78-5FFF-4982-9406-27F1D5E663CA}</Project>
+      <Name>Lib_RscFormats</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_RscIPgC\Lib_RscIPgC.csproj">
+      <Project>{4E3CEDCB-E310-45CE-931D-01C8F50DDACE}</Project>
+      <Name>Lib_RscIPgC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20\Lib_RscFrmWrk\Lib_RscFrmWrk.csproj">
+      <Project>{1D71FEFD-12FD-4986-9E04-575A8D689F75}</Project>
+      <Name>Lib_RscFrmWrk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RscWpShellV20_GoogleApi\Lib_RscGoogleApi\Lib_RscGoogleApi.csproj">
+      <Project>{2B231F9C-4401-43D0-8F99-76166C33A98D}</Project>
+      <Name>Lib_RscGoogleApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RscGoogleApiMail_Agent\RscGoogleApiMail_Agent.csproj">
+      <Project>{5F83D2F6-BE40-4A0A-AB4C-39FD3BC88915}</Project>
+      <Name>RscGoogleApiMail_Agent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RscGoogleApiMail_Lib\RscGoogleApiMail_Lib.csproj">
+      <Project>{A99D0DC0-BA1D-4FEA-B320-4B1E59861F30}</Project>
+      <Name>RscGoogleApiMail_Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

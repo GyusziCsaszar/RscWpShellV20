@@ -56,3 +56,7 @@ RscWpShellV20_GoogleApi/Lib_RscHttps/Bin/
 RscWpShellV20_GoogleApi/Lib_RscHttps/obj/
 RscWpShellV20_GoogleApi/RscGoogleApi/Bin/
 RscWpShellV20_GoogleApi/RscGoogleApi/obj/
+RscWpShellV20_GoogleApiMail/RscGoogleApiMail/Bin/
+RscWpShellV20_GoogleApiMail/RscGoogleApiMail/obj/
+RscWpShellV20_GoogleApiMail/RscGoogleApiMail_Agent/Bin/
+RscWpShellV20_GoogleApiMail/RscGoogleApiMail_Agent/obj/
