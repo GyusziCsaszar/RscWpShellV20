@@ -1,5 +1,5 @@
 # RscWpShellV20
-Windows Phone multipage Launch Screen with wallpaper and icons support
+Windows Phone multipage Launch Screen alike App with wallpaper and icons support
 
 App Features:
 - Multi page launcher screen with wallpaper and icons.
