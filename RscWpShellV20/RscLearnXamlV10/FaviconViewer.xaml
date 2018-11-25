@@ -1,0 +1,96 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RscLearnXamlV10.FaviconViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,17,0,28">
+            <TextBlock x:Name="PageTitle" Text="favicon viewer" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" />
+        </StackPanel>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="icon URI" Grid.Row="0" />
+            <Grid x:Name="GetPanel" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="tbUri" Grid.Row="0" Grid.Column="0" Text="http://ressive.hu/favicon.ico" Width="Auto"></TextBox>
+                <Button x:Name="btnGet" Grid.Row="0" Grid.Column="1" Content="d" Width="Auto"></Button>
+                <Button x:Name="btnSave" Visibility="Collapsed" Grid.Row="0" Grid.Column="2" Content="s" Width="Auto"></Button>
+                <Button x:Name="btnWebDog" Visibility="Collapsed" Grid.Row="0" Grid.Column="3" Content="wd" Width="Auto"></Button>
+                <TextBlock Text="download" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="-30,0,0,0" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <TextBlock x:Name="lblSave" Visibility="Collapsed" Text="save" TextAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <TextBlock x:Name="lblWebDog" Visibility="Collapsed" Text="WebDog" TextAlignment="Center" Grid.Row="1" Grid.Column="3" FontSize="{StaticResource PhoneFontSizeSmall}" />
+            </Grid>
+            <ProgressBar x:Name="prsBar" Grid.Row="2" IsIndeterminate="True" Visibility="Collapsed" />
+            <TextBlock Text="icon properties" Grid.Row="3" />
+            <ListBox x:Name="icoLst" Grid.Row="4" BorderThickness="{StaticResource PhoneBorderThickness}" BorderBrush="{StaticResource PhoneDisabledBrush}" Margin="{StaticResource PhoneMargin}" FontSize="{StaticResource PhoneFontSizeNormal}" />
+            <TextBlock Text="icon pixels (16x16 only)" Grid.Row="5" />
+            <Grid x:Name="ImgPanel" Grid.Row="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="palette" Grid.Row="0" Grid.Column="0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <Rectangle x:Name="bkPalette" Grid.Row="1" Grid.Column="0" Fill="White" Width="72" Height="72" Margin="6" />
+                <Canvas x:Name="imgPalette" Grid.Row="1" Grid.Column="0" Width="64" Height="64" Margin="12"></Canvas>
+                <TextBlock Text="icon" Grid.Row="0" Grid.Column="1" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <Rectangle x:Name="bkIcon" Grid.Row="1" Grid.Column="1" Fill="White" Width="72" Height="72" Margin="6" />
+                <Canvas x:Name="imgIcon" Grid.Row="1" Grid.Column="1" Width="64" Height="64" Margin="12"></Canvas>
+                <TextBlock Text="icon sm" Grid.Row="0" Grid.Column="2" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <Rectangle x:Name="bkIconSm" Grid.Row="1" Grid.Column="2" Fill="White" Width="72" Height="72" Margin="6" />
+                <Canvas x:Name="imgIconSm" Grid.Row="1" Grid.Column="2" Width="64" Height="64" Margin="12"></Canvas>
+                <TextBlock Text="saved jpg file" Grid.Row="0" Grid.Column="3" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <StackPanel x:Name="savePanel" Grid.Row="1" Grid.Column="3">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<Image x:Name="isoImg" Grid.Column="1" Stretch="UniformToFill" Height="48" Width="48" Margin="0,6,0,3" />						
+						<Image x:Name="isoImgSm" Grid.Column="2" Stretch="UniformToFill" Height="48" Width="48" Margin="0,6,0,3" />						
+					</Grid>
+                    <TextBlock x:Name="isoName" Text="" Grid.Row="0" Grid.Column="2" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

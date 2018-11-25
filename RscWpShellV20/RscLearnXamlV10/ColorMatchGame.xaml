@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RscLearnXamlV10.ColorMatchGame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+	
+	<Grid x:Name="imgGrid" >		
+	<Image x:Name="imgBk" Source="SplashScreenImage.jpg" Stretch="Fill"/>
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+  <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid x:Name="ContentPanel" Grid.Row="0" Margin="12,0,12,0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid x:Name="settings" Grid.Row="0" Margin="-12,0,-12,6" Background="Gray">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="tbCx" TextAlignment="Center" Text="6" Grid.Row="0" Grid.Column="0" Margin="-6,-6,-6,-6" InputScope="Digits" />
+        <TextBlock x:Name="lblCx" Text="width" Grid.Row="1" Grid.Column="0" Margin="3,0,3,0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBox x:Name="tbCy" TextAlignment="Center" Text="10" Grid.Row="0" Grid.Column="1" Margin="-6,-6,-6,-6" InputScope="Digits" />
+        <TextBlock x:Name="lblCy" Text="height" Grid.Row="1" Grid.Column="1" Margin="3,0,3,0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBox x:Name="tbCc" TextAlignment="Center" Text="6" Grid.Row="0" Grid.Column="2" Margin="-6,-6,-6,-6" InputScope="Digits" />
+        <TextBlock x:Name="lblCc" Text="colors" Grid.Row="1" Grid.Column="2" Margin="3,0,3,0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <CheckBox x:Name="chb3D" IsChecked="True" Grid.Row="0" Grid.Column="3" Margin="0, -6, -12, -6" />
+        <TextBlock x:Name="lbl3D" Text="3D" Grid.Row="1" Grid.Column="3" Margin="3,0,3,0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <CheckBox x:Name="chbShowHis" IsChecked="True" Grid.Row="0" Grid.Column="4" Margin="0, -6, -12, -6" />
+        <TextBlock x:Name="lblShowHis" Text="history" Grid.Row="1" Grid.Column="4" Margin="3,0,3,0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <CheckBox x:Name="chbDbg" IsChecked="False" Grid.Row="0" Grid.Column="5" Margin="0, -6, -12, -6" />
+        <TextBlock x:Name="lblDbg" Text="DBG" Grid.Row="1" Grid.Column="5" Margin="3,0,3,0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <Button x:Name="btnStart" Grid.Row="0" Grid.Column="6" Content="s" Width="Auto" Margin="-6,-6,-6,-6"></Button>
+        <TextBlock x:Name="lblStart" Text="start" Grid.Row="1" Grid.Column="6" Margin="3,0,3,0" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+      </Grid>
+      <Grid x:Name="place" Grid.Row="1" Margin="-12, 0, -12, 0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="lblDoc" Text="DBG" Grid.Row="0" Grid.Column="0" Visibility="Collapsed" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <StackPanel x:Name="doc" Grid.Row="1" Grid.Column="0" Width="64" Visibility="Collapsed"></StackPanel>
+        <TextBlock x:Name="lblHis" Text="history" Grid.Row="0" Grid.Column="1" Visibility="Collapsed" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <ListBox x:Name="his" Background="Gray" Grid.Row="1" Grid.Column="1" Width="64" Visibility="Collapsed" BorderThickness="{StaticResource PhoneBorderThickness}" BorderBrush="{StaticResource PhoneDisabledBrush}" Margin="0,0,0,0" FontSize="{StaticResource PhoneFontSizeExtraLarge}" />
+        <TextBlock x:Name="prsBar" Grid.Row="0" Grid.Column="2" Text="...processing..." Visibility="Collapsed" TextAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}" Foreground="{StaticResource PhoneAccentBrush}" />
+        <Canvas x:Name="view" Grid.Row="1" Grid.Column="2"></Canvas>
+      </Grid>
+    </Grid>
+  </Grid>
+  </Grid>
+</phone:PhoneApplicationPage>

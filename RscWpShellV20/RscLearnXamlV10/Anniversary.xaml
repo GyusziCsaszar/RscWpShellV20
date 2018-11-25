@@ -1,0 +1,83 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RscLearnXamlV10.Anniversary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+  <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid x:Name="ContentPanel" Grid.Row="0" Margin="-12,-12,-12,-12">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid x:Name="FileName" Grid.Row="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnNew" Grid.Row="0" Grid.Column="1" Content="n" Width="Auto"></Button>
+        <TextBlock x:Name="PageTitle" Text="   Anniversary" Grid.Row="0" Grid.Column="2" Style="{StaticResource PhoneTextTitle2Style}" />
+        <TextBox x:Name="txtTit" Text="" Grid.Row="0" Visibility="Collapsed" FontFamily="Comic Sans MS" FontSize="{StaticResource PhoneFontSizeNormal}" Grid.Column="2" Width="Auto" />
+        <Button x:Name="btnDel" Grid.Row="0" Grid.Column="3" Visibility="Collapsed" Content="d" Width="Auto"></Button>
+        <Button x:Name="btnSend" Grid.Row="0" Grid.Column="4" Visibility="Collapsed" Content="e" Width="Auto"></Button>
+        <Button x:Name="btnSave" Grid.Row="0" Grid.Column="5" Visibility="Collapsed" Content="s" Width="Auto"></Button>
+        <Button x:Name="btnSndAll" Grid.Row="0" Grid.Column="6" Content="sa" Width="Auto"></Button>
+        <TextBlock Text="new" TextAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBlock Text="title" TextAlignment="Left" Margin="12, 0, 12, 0" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBlock x:Name="txtCch" Text="0" TextAlignment="Right" Margin="12, 0, 12, 0" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBlock x:Name="lblDel" Text="delete" Visibility="Collapsed" TextAlignment="Center" Grid.Row="1" Grid.Column="3" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBlock x:Name="lblSend" Visibility="Collapsed" Text="send" TextAlignment="Center" Grid.Row="1" Grid.Column="4" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBlock x:Name="lblSave" Visibility="Collapsed" Text="save" TextAlignment="Center" Grid.Row="1" Grid.Column="5" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        <TextBlock x:Name="lblSendAll" Text="send all" TextAlignment="Center" Grid.Row="1" Grid.Column="6" FontSize="{StaticResource PhoneFontSizeSmall}" />
+      </Grid>
+      <ListBox x:Name="lbTit" Grid.Row="0" Visibility="Collapsed"></ListBox>
+	  <Grid x:Name="spDate" Grid.Row="1" Visibility="Collapsed" HorizontalAlignment="Center" Margin="12,0,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="150" />
+          <ColumnDefinition Width="100" />
+          <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="year" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="12,0,12,0" HorizontalAlignment="Right" />
+        <TextBlock Text="month" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="12,0,12,0" HorizontalAlignment="Center" />
+        <TextBlock Text="day" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="12,0,12,0" HorizontalAlignment="Left" />
+        <TextBox x:Name="txY" Text="" Grid.Row="1" Grid.Column="0" TextAlignment="Right" MaxLength="4" InputScope="DateYear"></TextBox>
+        <TextBox x:Name="txM" Text="" Grid.Row="1" Grid.Column="1" TextAlignment="Center" MaxLength="2" InputScope="DateMonth"></TextBox>
+        <TextBox x:Name="txD" Text="" Grid.Row="1" Grid.Column="2" TextAlignment="Left" MaxLength="2" InputScope="DateDay"></TextBox>
+	  </Grid>
+      <TextBlock x:Name="lblNot" Grid.Row="2" Visibility="Collapsed" Margin="0,0,0,12" Text="Date allowed: YYYY MM DD or MM DD or DD only!" TextAlignment="Center" Foreground="#FF626262" FontSize="{StaticResource PhoneFontSizeSmall}" />
+      <TextBlock x:Name="lblTitles" Visibility="Collapsed" Text="list of saved notes" TextAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
+      <ScrollViewer x:Name="scrl" Grid.Row="3" Margin="12,0,12,12" Background="#FFFCF4B2" Foreground="#FF626262">
+        <StackPanel x:Name="filesPanel"></StackPanel>
+      </ScrollViewer>
+    </Grid>
+  </Grid>
+
+</phone:PhoneApplicationPage>
