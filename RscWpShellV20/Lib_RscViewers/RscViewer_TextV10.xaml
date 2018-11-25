@@ -1,0 +1,101 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Lib_RscViewers.RscViewer_TextV10"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		
+		<!--TitlePanel contains the name of the application and page title-->
+		<Grid x:Name="AppTitleBar" Grid.Row="0" Margin="0,2,0,0"></Grid>
+
+		<!--ContentPanel - place additional content here-->
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
+			
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			
+			<Image x:Name="Img" Grid.Row="0" Stretch="Uniform" Height="200" Width="400"
+				HorizontalAlignment="Center" Visibility="Collapsed" />
+			
+			<Grid x:Name="BtnGrid" Grid.Row="1" Background="Green" Visibility="Collapsed">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="btnCall" Grid.Column="0" Content="N/A" Foreground="White"
+					BorderThickness="1" Margin="-6" Click="btnCall_Click" />
+				<Button x:Name="btnSms" Grid.Column="1" Content="SMS" Foreground="White"
+					BorderThickness="1" Margin="-6" Click="btnSms_Click" />
+			</Grid>
+			
+			<ListBox x:Name="lbLines" Grid.Row="2" Background="White">					
+			    <ListBox.ItemTemplate>
+			        <DataTemplate>
+			        	<Grid Margin="0, 0, 0, 0">
+				            <Grid.RowDefinitions>
+				                <RowDefinition Height="Auto" />
+				            </Grid.RowDefinitions>
+							<Rectangle Grid.Row="0" Width="{Binding ListBoxAsteriskWidth}" Opacity="0.5" Fill="{Binding BackBrush}"/>
+							<Grid Grid.Row="0" Margin="0, 0, 0, 0">
+					            <Grid.RowDefinitions>
+					                <RowDefinition Height="*" />
+					            </Grid.RowDefinitions>
+								<TextBox Grid.Row="0" Text="{Binding Text}" FontSize="{Binding FontSize}"
+									Background="{Binding BackBrush}" Foreground="{Binding ForeBrush}" Margin="-11, -12, -12, -12"
+									BorderThickness="0"
+									AcceptsReturn="True" TextWrapping="Wrap" TabIndex="-1"/>
+							</Grid>
+							<Button Grid.Row="0" Content=""
+								Tag="{Binding This}" Click="TextLbItem_BtnLine_Click"
+								BorderThickness="0" Margin="-12, -12, -12, -12" Opacity="0.5"/>
+						</Grid>
+					</DataTemplate>
+			    </ListBox.ItemTemplate>			
+			</ListBox>
+			
+			<Grid x:Name="BtnGridEx" Grid.Row="3" Background="Green" Visibility="Collapsed">
+				<Button x:Name="btnEx" Content="N/A" Foreground="White"
+					BorderThickness="1" Margin="-6" Click="btnEx_Click" />
+			</Grid>
+			
+			<Grid x:Name="TitlePanel" Grid.Row="4" Background="LightGray">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+			</Grid>
+
+		</Grid>
+		
+		<!--StatusPanel contains the name of the application and page title-->
+		<Grid x:Name="AppStatusBar" Grid.Row="2" Margin="0,0,2,0"></Grid>
+		
+	</Grid>
+</phone:PhoneApplicationPage>

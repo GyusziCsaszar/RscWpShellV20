@@ -1,0 +1,116 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Lib_RscViewers.RscViewer_FsV12"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+	
+	<Grid x:Name="imgGrid" >		
+	<Image x:Name="imgBk" Source="SplashScreenImage.jpg" Stretch="Fill"/>
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		
+        <Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+		
+		<!--TitlePanel contains the name of the application and page title-->
+		<Grid x:Name="AppTitleBar" Grid.Row="0"></Grid>
+		
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+			
+            <ScrollViewer x:Name="scrl" Grid.Row="0" Margin="0,2,0,2">
+                <StackPanel x:Name="spFiles">
+                </StackPanel>               
+            </ScrollViewer>
+			
+            <Grid x:Name="ToolBar" Grid.Row="1" Margin="-12, 1, -12, 1" Background="LightGray">
+            	
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="12" />
+                </Grid.ColumnDefinitions>
+
+				<Image x:Name="imgRootIco" Grid.Column="1" Width="36" Height="36" Margin="2"></Image>
+	            <Button x:Name="btnRoot" Grid.Column="1" Content=" . " Margin="-12,-12,-12,-12" Width="Auto"
+					Click="btnRoot_Click" FontSize="{StaticResource PhoneFontSizeLarge}"
+					BorderThickness="0" Foreground="Black"></Button>
+
+				<Image x:Name="imgUpIco" Grid.Column="3" Width="36" Height="36" Margin="2"></Image>
+	            <Button x:Name="btnUp" Grid.Column="3" Content=" .. " Margin="-12,-12,-12,-12" Width="Auto"
+					Click="btnUp_Click" FontSize="{StaticResource PhoneFontSizeLarge}"
+					BorderThickness="0" Foreground="Black"></Button>
+					
+				<Grid Grid.Column="4">
+		            <Grid.RowDefinitions>
+		                <RowDefinition Height="*" />
+		                <RowDefinition Height="Auto" />
+		                <RowDefinition Height="Auto" />
+		            </Grid.RowDefinitions>
+					<ProgressBar x:Name="prsBar1" Grid.Row="1" Visibility="Collapsed"
+						Height="10" Margin="-12, 0, -6, 6"
+						RenderTransformOrigin="0.5,0.5">
+			    			<ProgressBar.RenderTransform>
+			    				<CompositeTransform ScaleY="-2"/>
+			    			</ProgressBar.RenderTransform>
+					</ProgressBar>
+					<ProgressBar x:Name="prsBar2" Grid.Row="2" Visibility="Collapsed"
+						Height="10" Margin="-12, 0, -6, 6"
+						RenderTransformOrigin="0.5,0.5">
+			    			<ProgressBar.RenderTransform>
+			    				<CompositeTransform ScaleY="-2"/>
+			    			</ProgressBar.RenderTransform>
+					</ProgressBar>
+				</Grid>
+
+				<Image x:Name="imgUsrAdm" Grid.Column="5" Stretch="Fill" Width="64" Height="36" Margin="2"></Image>
+	            <Button x:Name="btnUsrAdm" Grid.Column="5" Content=" adm " Margin="-12,-12,-12,-12" Width="Auto"
+					Click="btnUsrAdm_Click" FontSize="{StaticResource PhoneFontSizeSmall}"
+					BorderThickness="0" Foreground="Black"></Button>
+
+				<Image x:Name="imgAddFldr" Grid.Column="7" Width="36" Height="36" Margin="2"></Image>
+	            <Button x:Name="btnAddFldr" Grid.Column="7" Content="" Margin="-12,-12,-12,-12" Width="Auto"
+					Click="btnAddFldr_Click" FontSize="{StaticResource PhoneFontSizeLarge}"
+					BorderThickness="0" Foreground="Black"></Button>
+
+				<Image x:Name="imgExpAll" Grid.Column="9" Width="36" Height="36" Margin="2"></Image>
+	            <Button x:Name="btnExpAll" Grid.Column="9" Content="" Margin="-12,-12,-12,-12" Width="Auto"
+					Click="btnExpAll_Click" FontSize="{StaticResource PhoneFontSizeLarge}"
+					BorderThickness="0" Foreground="Black"></Button>
+					
+	        </Grid>
+			
+       </Grid>
+		
+		<!--StatusPanel contains the name of the application and page title-->
+		<Grid x:Name="AppStatusBar" Grid.Row="2"></Grid>
+		
+	</Grid>
+	</Grid>
+
+</phone:PhoneApplicationPage>
