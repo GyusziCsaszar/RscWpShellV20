@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3cc7f203-4366-422c-a706-e37a527aec36}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lib_Rsc</RootNamespace>
+    <AssemblyName>Lib_Rsc</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RscBlueTooth.cs" />
+    <Compile Include="RscFileTypes.cs" />
+    <Compile Include="RscKnownFolders.cs" />
+    <Compile Include="RscMediaLib.cs" />
+    <Compile Include="RscRegFs.cs" />
+    <Compile Include="RscRegistry.cs" />
+    <Compile Include="RscShellTileManager.cs" />
+    <Compile Include="RscSort.cs" />
+    <Compile Include="RscTheme.cs" />
+    <Compile Include="RscUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Media\BociBociTarka.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Ding.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\DingDing.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\empty.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bk001_landscape.jpg" />
+    <Resource Include="Images\Bk001_portrait.jpg" />
+    <Resource Include="Images\BlackBlank.png" />
+    <Resource Include="Images\Btn001_%28%29.jpg" />
+    <Resource Include="Images\Btn001_%28%29_hidden.jpg" />
+    <Resource Include="Images\Btn001_%28dir%29.jpg" />
+    <Resource Include="Images\Btn001_%28dir%29_hidden.jpg" />
+    <Resource Include="Images\Btn001_%28drv%29.jpg" />
+    <Resource Include="Images\Btn001_Add.jpg" />
+    <Resource Include="Images\Btn001_AddTile.jpg" />
+    <Resource Include="Images\Btn001_Back.jpg" />
+    <Resource Include="Images\Btn001_BookMark.jpg" />
+    <Resource Include="Images\Btn001_ClearCache.jpg" />
+    <Resource Include="Images\Btn001_Close.jpg" />
+    <Resource Include="Images\Btn001_Continue.jpg" />
+    <Resource Include="Images\Btn001_Copy.jpg" />
+    <Resource Include="Images\Btn001_Dec.jpg" />
+    <Resource Include="Images\Btn001_Delete.jpg" />
+    <Resource Include="Images\Btn001_DelTile.jpg" />
+    <Resource Include="Images\Btn001_Download.jpg" />
+    <Resource Include="Images\Btn001_DownMore.jpg" />
+    <Resource Include="Images\Btn001_Empty.jpg" />
+    <Resource Include="Images\Btn001_EmptyOff.jpg" />
+    <Resource Include="Images\Btn001_EmptyOn.jpg" />
+    <Resource Include="Images\Btn001_Home.jpg" />
+    <Resource Include="Images\Btn001_Inc.jpg" />
+    <Resource Include="Images\Btn001_InfErrOff.jpg" />
+    <Resource Include="Images\Btn001_InfErrOn.jpg" />
+    <Resource Include="Images\Btn001_LogOn.jpg" />
+    <Resource Include="Images\Btn001_LogOut.jpg" />
+    <Resource Include="Images\Btn001_Move.jpg" />
+    <Resource Include="Images\Btn001_MuteOff.jpg" />
+    <Resource Include="Images\Btn001_MuteOn.jpg" />
+    <Resource Include="Images\Btn001_NewFolder.jpg" />
+    <Resource Include="Images\Btn001_Next.jpg" />
+    <Resource Include="Images\Btn001_Open.jpg" />
+    <Resource Include="Images\Btn001_Pause.jpg" />
+    <Resource Include="Images\Btn001_Play.jpg" />
+    <Resource Include="Images\Btn001_Rec.jpg" />
+    <Resource Include="Images\Btn001_RecStop.jpg" />
+    <Resource Include="Images\Btn001_Remove.jpg" />
+    <Resource Include="Images\Btn001_Rename.jpg" />
+    <Resource Include="Images\Btn001_Save.jpg" />
+    <Resource Include="Images\Btn001_Share.jpg" />
+    <Resource Include="Images\Btn001_Shot.jpg" />
+    <Resource Include="Images\Btn001_ShotAF.jpg" />
+    <Resource Include="Images\Btn001_SkipNext.jpg" />
+    <Resource Include="Images\Btn001_SkipPrev.jpg" />
+    <Resource Include="Images\Btn001_Stop.jpg" />
+    <Resource Include="Images\Btn001_Tools.jpg" />
+    <Resource Include="Images\Btn001_TreeCollapse.jpg" />
+    <Resource Include="Images\Btn001_TreeExpand.jpg" />
+    <Resource Include="Images\Btn001_UpLess.jpg" />
+    <Resource Include="Images\BtnDrk001_%28dir%29.jpg" />
+    <Resource Include="Images\BtnDrk001_Add.jpg" />
+    <Resource Include="Images\BtnDrk001_Open.jpg" />
+    <Resource Include="Images\BtnDrk001_Remove.jpg" />
+    <Resource Include="Images\BtnDrk001_SkipNext.jpg" />
+    <Resource Include="Images\BtnDrk001_SkipPrev.jpg" />
+    <Resource Include="Images\CheckOff.jpg" />
+    <Resource Include="Images\CheckOn.jpg" />
+    <Resource Include="Images\Ico001_Battery.jpg" />
+    <Resource Include="Images\Ico001_BlueTooth.jpg" />
+    <Resource Include="Images\Ico001_Camcorder.jpg" />
+    <Resource Include="Images\Ico001_ColorMatch.jpg" />
+    <Resource Include="Images\Ico001_Contacts.jpg" />
+    <Resource Include="Images\Ico001_DeviceInfo.jpg" />
+    <Resource Include="Images\Ico001_EventViewer.jpg" />
+    <Resource Include="Images\Ico001_Explorer4.jpg" />
+    <Resource Include="Images\Ico001_FileTypes.jpg" />
+    <Resource Include="Images\Ico001_FindFiles.jpg" />
+    <Resource Include="Images\Ico001_FlashLight.jpg" />
+    <Resource Include="Images\Ico001_FtpDownLoad.jpg" />
+    <Resource Include="Images\Ico001_FtpTest.jpg" />
+    <Resource Include="Images\Ico001_FtpUpLoad.jpg" />
+    <Resource Include="Images\Ico001_Gallery.jpg" />
+    <Resource Include="Images\Ico001_GoogleApi.jpg" />
+    <Resource Include="Images\Ico001_GoogleApiMail.jpg" />
+    <Resource Include="Images\Ico001_IE.jpg" />
+    <Resource Include="Images\Ico001_LauncherMini.jpg" />
+    <Resource Include="Images\Ico001_PhotoCamera.jpg" />
+    <Resource Include="Images\Ico001_Ressive.jpg" />
+    <Resource Include="Images\Ico001_ScreenSaver.jpg" />
+    <Resource Include="Images\Ico001_Settings.jpg" />
+    <Resource Include="Images\Ico001_SoundPlayer.jpg" />
+    <Resource Include="Images\Ico001_StopMusic.jpg" />
+    <Resource Include="Images\Ico001_Text.jpg" />
+    <Resource Include="Images\Ico001_Themes.jpg" />
+    <Resource Include="Images\Ico001_VideoGallery.jpg" />
+    <Resource Include="Images\Ico001_Walls.jpg" />
+    <Resource Include="Images\Ico001_WiFi.jpg" />
+    <Resource Include="Images\IcoSm001_Contacts.jpg" />
+    <Resource Include="Images\IcoSm001_DeviceInfo.jpg" />
+    <Resource Include="Images\IcoSm001_EventViewer.jpg" />
+    <Resource Include="Images\IcoSm001_Explorer4.jpg" />
+    <Resource Include="Images\IcoSm001_FileTypes.jpg" />
+    <Resource Include="Images\IcoSm001_FindFiles.jpg" />
+    <Resource Include="Images\IcoSm001_FtpDownLoad.jpg" />
+    <Resource Include="Images\IcoSm001_FtpTest.jpg" />
+    <Resource Include="Images\IcoSm001_FtpUpLoad.jpg" />
+    <Resource Include="Images\IcoSm001_Gallery.jpg" />
+    <Resource Include="Images\IcoSm001_LauncherMini.jpg" />
+    <Resource Include="Images\IcoSm001_ScreenSaver.jpg" />
+    <Resource Include="Images\IcoSm001_Settings.jpg" />
+    <Resource Include="Images\IcoSm001_SoundPlayer.jpg" />
+    <Resource Include="Images\IcoSm001_Text.jpg" />
+    <Resource Include="Images\IcoSm001_Themes.jpg" />
+    <Resource Include="Images\IcoSm001_VideoGallery.jpg" />
+    <Resource Include="Images\IcoSm001_Walls.jpg" />
+    <Resource Include="Images\Img001_Dummy.jpg" />
+    <Resource Include="Images\Img001_WaitCursor.jpg" />
+    <Resource Include="Images\Type001_%28%29.jpg" />
+    <Resource Include="Images\Type001_%28%29_hidden.jpg" />
+    <Resource Include="Images\Type001_%28dir%29.jpg" />
+    <Resource Include="Images\Type001_%28dir%29_hidden.jpg" />
+    <Resource Include="Images\Type001_%28drv%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lib_OsGrade\Lib_OsGrade.csproj">
+      <Project>{0AD48029-EC3A-4E45-B318-2CE2F420030D}</Project>
+      <Name>Lib_OsGrade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lib_RscStore\Lib_RscStore.csproj">
+      <Project>{A2AD908A-8142-480B-809F-9151A176EE5F}</Project>
+      <Name>Lib_RscStore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
